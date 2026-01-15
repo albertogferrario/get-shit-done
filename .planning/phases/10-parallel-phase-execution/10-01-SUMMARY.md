@@ -20,7 +20,7 @@ tech-stack:
 
 key-files:
   created: []
-  modified: [get-shit-done/workflows/execute-plan.md, commands/gsd/execute-plan.md, commands/gsd/plan-fix.md, commands/gsd/resume-task.md, get-shit-done/workflows/plan-phase.md, get-shit-done/templates/phase-prompt.md, get-shit-done/templates/summary.md, get-shit-done/templates/agent-history.md, get-shit-done/templates/codebase/structure.md]
+  modified: [conductor/workflows/execute-plan.md, commands/gsd/execute-plan.md, commands/gsd/plan-fix.md, commands/gsd/resume-task.md, conductor/workflows/plan-phase.md, conductor/templates/phase-prompt.md, conductor/templates/summary.md, conductor/templates/agent-history.md, conductor/templates/codebase/structure.md]
 
 key-decisions:
   - "git mv preserves history"
@@ -66,15 +66,15 @@ Each task was committed atomically:
 **Plan metadata:** `81cbd29` (docs: complete plan)
 
 ## Files Created/Modified
-- `get-shit-done/workflows/execute-plan.md` - Renamed from execute-phase.md
+- `conductor/workflows/execute-plan.md` - Renamed from execute-phase.md
 - `commands/gsd/execute-plan.md` - Updated workflow reference and process text
 - `commands/gsd/plan-fix.md` - Updated execution_context reference
 - `commands/gsd/resume-task.md` - Updated infrastructure mention
-- `get-shit-done/workflows/plan-phase.md` - Updated execution context reference
-- `get-shit-done/templates/phase-prompt.md` - Updated 2 path occurrences
-- `get-shit-done/templates/summary.md` - Updated 3 workflow mentions
-- `get-shit-done/templates/agent-history.md` - Updated 2 workflow mentions
-- `get-shit-done/templates/codebase/structure.md` - Updated example workflow name
+- `conductor/workflows/plan-phase.md` - Updated execution context reference
+- `conductor/templates/phase-prompt.md` - Updated 2 path occurrences
+- `conductor/templates/summary.md` - Updated 3 workflow mentions
+- `conductor/templates/agent-history.md` - Updated 2 workflow mentions
+- `conductor/templates/codebase/structure.md` - Updated example workflow name
 
 ## Decisions Made
 - Used git mv for rename to preserve file history

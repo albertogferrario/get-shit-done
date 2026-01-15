@@ -1,4 +1,4 @@
-# GSD Style Rules
+# Conductor Style Rules
 
 These rules apply to ALL files in this repository.
 
@@ -37,7 +37,7 @@ Use semantic tags: `<objective>`, `<verification>`, `<action>`, `<process>`
 | Type | Convention | Example |
 |------|------------|---------|
 | Files | kebab-case | `execute-phase.md` |
-| Commands | `gsd:kebab-case` | `gsd:execute-phase` |
+| Commands | `conductor:kebab-case` | `conductor:execute-phase` |
 | Step names | snake_case | `name="load_project_state"` |
 | Bash variables | CAPS_UNDERSCORES | `PHASE_ARG` |
 | Type attributes | colon separator | `type="checkpoint:human-verify"` |
@@ -69,7 +69,7 @@ Build authentication system
 @-references are lazy loading signals — instructions to read, not pre-loaded content.
 
 ```
-@~/.claude/get-shit-done/workflows/execute-phase.md  # Static (always load)
+@~/.claude/conductor/workflows/execute-phase.md  # Static (always load)
 @.planning/DISCOVERY.md (if exists)                   # Conditional
 ```
 

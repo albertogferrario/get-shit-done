@@ -16,14 +16,14 @@ const reset = '\x1b[0m';
 const pkg = require('../package.json');
 
 const banner = `
-${cyan}   ██████╗ ███████╗██████╗
-  ██╔════╝ ██╔════╝██╔══██╗
-  ██║  ███╗███████╗██║  ██║
-  ██║   ██║╚════██║██║  ██║
-  ╚██████╔╝███████║██████╔╝
-   ╚═════╝ ╚══════╝╚═════╝${reset}
+${cyan}   ██████╗ ██████╗ ███╗   ██╗██████╗ ██╗   ██╗ ██████╗████████╗ ██████╗ ██████╗
+  ██╔════╝██╔═══██╗████╗  ██║██╔══██╗██║   ██║██╔════╝╚══██╔══╝██╔═══██╗██╔══██╗
+  ██║     ██║   ██║██╔██╗ ██║██║  ██║██║   ██║██║        ██║   ██║   ██║██████╔╝
+  ██║     ██║   ██║██║╚██╗██║██║  ██║██║   ██║██║        ██║   ██║   ██║██╔══██╗
+  ╚██████╗╚██████╔╝██║ ╚████║██████╔╝╚██████╔╝╚██████╗   ██║   ╚██████╔╝██║  ██║
+   ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═════╝  ╚═════╝  ╚═════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝${reset}
 
-  Get Shit Done ${dim}v${pkg.version}${reset}
+  Conductor ${dim}v${pkg.version}${reset}
   A meta-prompting, context engineering and spec-driven
   development system for Claude Code by TÂCHES.
 `;
@@ -59,7 +59,7 @@ console.log(banner);
 
 // Show help if requested
 if (hasHelp) {
-  console.log(`  ${yellow}Usage:${reset} npx get-shit-done-cc [options]
+  console.log(`  ${yellow}Usage:${reset} npx conductor-cc [options]
 
   ${yellow}Options:${reset}
     ${cyan}-g, --global${reset}              Install globally (to Claude config directory)
@@ -69,16 +69,16 @@ if (hasHelp) {
 
   ${yellow}Examples:${reset}
     ${dim}# Install to default ~/.claude directory${reset}
-    npx get-shit-done-cc --global
+    npx conductor-cc --global
 
     ${dim}# Install to custom config directory (for multiple Claude accounts)${reset}
-    npx get-shit-done-cc --global --config-dir ~/.claude-bc
+    npx conductor-cc --global --config-dir ~/.claude-bc
 
     ${dim}# Using environment variable${reset}
-    CLAUDE_CONFIG_DIR=~/.claude-bc npx get-shit-done-cc --global
+    CLAUDE_CONFIG_DIR=~/.claude-bc npx conductor-cc --global
 
     ${dim}# Install to current project only${reset}
-    npx get-shit-done-cc --local
+    npx conductor-cc --local
 
   ${yellow}Notes:${reset}
     The --config-dir option is useful when you have multiple Claude Code
@@ -151,33 +151,33 @@ function install(isGlobal) {
   const commandsDir = path.join(claudeDir, 'commands');
   fs.mkdirSync(commandsDir, { recursive: true });
 
-  // Copy commands/gsd with path replacement
-  const gsdSrc = path.join(src, 'commands', 'gsd');
-  const gsdDest = path.join(commandsDir, 'gsd');
-  copyWithPathReplacement(gsdSrc, gsdDest, pathPrefix);
-  console.log(`  ${green}✓${reset} Installed commands/gsd`);
+  // Copy commands/conductor with path replacement
+  const conductorCmdSrc = path.join(src, 'commands', 'conductor');
+  const conductorCmdDest = path.join(commandsDir, 'conductor');
+  copyWithPathReplacement(conductorCmdSrc, conductorCmdDest, pathPrefix);
+  console.log(`  ${green}✓${reset} Installed commands/conductor`);
 
-  // Copy get-shit-done skill with path replacement
-  const skillSrc = path.join(src, 'get-shit-done');
-  const skillDest = path.join(claudeDir, 'get-shit-done');
+  // Copy conductor skill with path replacement
+  const skillSrc = path.join(src, 'conductor');
+  const skillDest = path.join(claudeDir, 'conductor');
   copyWithPathReplacement(skillSrc, skillDest, pathPrefix);
-  console.log(`  ${green}✓${reset} Installed get-shit-done`);
+  console.log(`  ${green}✓${reset} Installed conductor`);
 
   // Copy CHANGELOG.md
   const changelogSrc = path.join(src, 'CHANGELOG.md');
-  const changelogDest = path.join(claudeDir, 'get-shit-done', 'CHANGELOG.md');
+  const changelogDest = path.join(claudeDir, 'conductor', 'CHANGELOG.md');
   if (fs.existsSync(changelogSrc)) {
     fs.copyFileSync(changelogSrc, changelogDest);
     console.log(`  ${green}✓${reset} Installed CHANGELOG.md`);
   }
 
   // Write VERSION file for whats-new command
-  const versionDest = path.join(claudeDir, 'get-shit-done', 'VERSION');
+  const versionDest = path.join(claudeDir, 'conductor', 'VERSION');
   fs.writeFileSync(versionDest, pkg.version);
   console.log(`  ${green}✓${reset} Wrote VERSION (${pkg.version})`);
 
   console.log(`
-  ${green}Done!${reset} Launch Claude Code and run ${cyan}/gsd:help${reset}.
+  ${green}Done!${reset} Launch Claude Code and run ${cyan}/conductor:help${reset}.
 `);
 }
 

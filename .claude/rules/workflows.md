@@ -1,11 +1,11 @@
 ---
 paths:
-  - "get-shit-done/workflows/**/*.md"
+  - "conductor/workflows/**/*.md"
 ---
 
 # Workflow Rules
 
-Rules for editing files in `get-shit-done/workflows/`.
+Rules for editing files in `conductor/workflows/`.
 
 ## No Frontmatter
 

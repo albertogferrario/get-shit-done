@@ -1,12 +1,12 @@
-# Roadmap: GSD Brownfield Support
+# Roadmap: Conductor Brownfield Support
 
 ## Overview
 
-Add comprehensive brownfield support to GSD. Users adopting GSD for existing codebases will have a systematic way to capture architectural knowledge before planning begins. A new `/gsd:map-codebase` workflow will produce structured `.planning/codebase/` documents that stay current as plans execute.
+Add comprehensive brownfield support to Conductor. Users adopting Conductor for existing codebases will have a systematic way to capture architectural knowledge before planning begins. A new `/conductor:map-codebase` workflow will produce structured `.planning/codebase/` documents that stay current as plans execute.
 
 ## Domain Expertise
 
-None - this is internal GSD development following existing command/workflow/template patterns.
+None - this is internal Conductor development following existing command/workflow/template patterns.
 
 ## Phases
 
@@ -15,11 +15,11 @@ None - this is internal GSD development following existing command/workflow/temp
 - Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
 
 - [ ] **Phase 1: Templates & Structure** - Create codebase map templates and folder structure
-- [ ] **Phase 2: Map Codebase Command** - Build /gsd:map-codebase with parallel Explore agents
-- [ ] **Phase 3: Integration** - Wire brownfield support into existing GSD workflows
+- [ ] **Phase 2: Map Codebase Command** - Build /conductor:map-codebase with parallel Explore agents
+- [ ] **Phase 3: Integration** - Wire brownfield support into existing Conductor workflows
 - [x] **Phase 10: Parallel Phase Execution** - Separate single-plan vs multi-plan execution with intelligent parallelization
 - [x] **Phase 11: Parallel-Aware Planning** - Update plan-phase.md to create parallelizable plans when config enables it
-- [ ] **Phase 12: Changelog & Update Awareness** - Add changelog generation and /gsd:whats-new for version discovery
+- [ ] **Phase 12: Changelog & Update Awareness** - Add changelog generation and /conductor:whats-new for version discovery
 - [x] **Phase 99: Test Parallel (THROWAWAY)** - Create 3 silly independent files to test parallel execution
 
 ## Phase Details
@@ -27,7 +27,7 @@ None - this is internal GSD development following existing command/workflow/temp
 ### Phase 1: Templates & Structure
 **Goal**: Create templates for all codebase map document types and define the folder structure
 **Depends on**: Nothing (first phase)
-**Research**: Unlikely (established GSD template patterns)
+**Research**: Unlikely (established Conductor template patterns)
 **Plans**: TBD
 
 Documents to template:
@@ -40,30 +40,30 @@ Documents to template:
 - concerns.md (tech debt, known issues)
 
 ### Phase 2: Map Codebase Command
-**Goal**: Build the /gsd:map-codebase slash command with parallel Explore agent workflow
+**Goal**: Build the /conductor:map-codebase slash command with parallel Explore agent workflow
 **Depends on**: Phase 1
-**Research**: Unlikely (using existing Explore agent patterns, GSD workflow conventions)
+**Research**: Unlikely (using existing Explore agent patterns, Conductor workflow conventions)
 **Plans**: TBD
 
 Components:
 - Slash command: `commands/gsd/map-codebase.md`
-- Workflow: `get-shit-done/workflows/map-codebase.md`
+- Workflow: `conductor/workflows/map-codebase.md`
 - Parallel Explore agent orchestration
 - Output to `.planning/codebase/`
 
 ### Phase 3: Integration
-**Goal**: Wire brownfield support into existing GSD workflows
+**Goal**: Wire brownfield support into existing Conductor workflows
 **Depends on**: Phase 2
-**Research**: Unlikely (modifying existing GSD commands, established patterns)
+**Research**: Unlikely (modifying existing Conductor commands, established patterns)
 **Plans**: TBD
 
 Integration points:
-- `/gsd:new-project` - detect existing code, offer to map first
-- `/gsd:plan-phase` - load relevant codebase context automatically
+- `/conductor:new-project` - detect existing code, offer to map first
+- `/conductor:plan-phase` - load relevant codebase context automatically
 - Post-execution - update codebase map after plan execution
 
 ### Phase 4: Plan-Phase Optimizations
-**Goal**: Reduce context usage in /gsd:plan-phase by ~37% through file consolidation and verbosity reduction
+**Goal**: Reduce context usage in /conductor:plan-phase by ~37% through file consolidation and verbosity reduction
 **Depends on**: Phase 3
 **Research**: Unlikely (internal optimization of existing files)
 **Plans**: TBD
@@ -75,9 +75,9 @@ Optimization targets:
 - Streamline `plan-phase.md` workflow (-9KB)
 
 ### Phase 5: TDD Instructions
-**Goal**: Add TDD guidance to GSD so Claude uses test-driven development when appropriate and beneficial
+**Goal**: Add TDD guidance to Conductor so Claude uses test-driven development when appropriate and beneficial
 **Depends on**: Phase 4
-**Research**: Unlikely (established TDD patterns, GSD integration points clear)
+**Research**: Unlikely (established TDD patterns, Conductor integration points clear)
 **Plans**: 2 plans
 
 Plans:
@@ -118,24 +118,24 @@ Enable intelligent context assembly for all historical phases by adding consiste
 
 **Goal:** [To be planned]
 **Depends on:** Phase 7
-**Research:** Unlikely (internal GSD workflow improvements)
+**Research:** Unlikely (internal Conductor workflow improvements)
 **Plans:** TBD
 
 Plans:
-- [ ] TBD (run /gsd:plan-phase 8 to break down)
+- [ ] TBD (run /conductor:plan-phase 8 to break down)
 
 **Details:**
 [To be added during planning]
 
 ### Phase 9: Integrate Verify-Work
 
-**Goal:** Properly integrate /gsd:verify-work into GSD with workflow delegation, templates, and /gsd:plan-fix command
+**Goal:** Properly integrate /conductor:verify-work into Conductor with workflow delegation, templates, and /conductor:plan-fix command
 **Depends on:** Phase 8
-**Research:** Unlikely (refactoring contributed command to match GSD patterns)
+**Research:** Unlikely (refactoring contributed command to match Conductor patterns)
 **Plans:** TBD
 
 Components:
-- Refactor `commands/gsd/verify-work.md` to GSD style (workflow delegation)
+- Refactor `commands/gsd/verify-work.md` to Conductor style (workflow delegation)
 - Create `workflows/verify-work.md` for UAT logic
 - Create `templates/uat-issues.md` for phase-scoped issues format
 - Create `commands/gsd/plan-fix.md` for planning fixes from UAT issues
@@ -143,13 +143,13 @@ Components:
 - Update README.md with new commands
 
 **Details:**
-Community contribution from OracleGreyBeard. Original command works but doesn't follow GSD patterns (no workflow delegation, inline templates, verbose steps). Refactor to match conventions, then add /gsd:plan-fix to complete the verify → fix loop.
+Community contribution from OracleGreyBeard. Original command works but doesn't follow Conductor patterns (no workflow delegation, inline templates, verbose steps). Refactor to match conventions, then add /conductor:plan-fix to complete the verify → fix loop.
 
 ### Phase 10: Parallel Phase Execution
 
 **Goal:** Implement proper parallel phase execution with clean separation between single-plan and multi-plan execution
 **Depends on:** Phase 9
-**Research:** Unlikely (adapting PR #43 patterns, existing GSD conventions)
+**Research:** Unlikely (adapting PR #43 patterns, existing Conductor conventions)
 **Plans:** 4 plans
 
 Plans:
@@ -160,8 +160,8 @@ Plans:
 
 **Details:**
 Structural refactoring to separate concerns:
-- `/gsd:execute-plan` executes a single PLAN.md (current behavior, ~1,700 lines)
-- `/gsd:execute-phase` executes all plans in a phase with intelligent parallelization (~1,300 lines)
+- `/conductor:execute-plan` executes a single PLAN.md (current behavior, ~1,700 lines)
+- `/conductor:execute-phase` executes all plans in a phase with intelligent parallelization (~1,300 lines)
 
 Parallelization features (adapted from PR #43):
 - Dependency analysis via `requires`/`provides` frontmatter + `<files>` overlap detection
@@ -194,7 +194,7 @@ This enables execute-phase to produce more Wave 1 plans (true independence) inst
 
 ### Phase 12: Changelog & Update Awareness
 
-**Goal:** Add changelog generation to publish workflow and `/gsd:whats-new` command for users to discover changes
+**Goal:** Add changelog generation to publish workflow and `/conductor:whats-new` command for users to discover changes
 **Depends on:** Phase 11
 **Research:** Unlikely (straightforward command + workflow additions)
 **Plans:** 3 plans
@@ -202,14 +202,14 @@ This enables execute-phase to produce more Wave 1 plans (true independence) inst
 Plans:
 - [x] 12-01: CHANGELOG.md foundation - Create changelog file, update installer to copy it
 - [ ] 12-02: Publish command update - Add changelog generation to gsd-publish-version.md
-- [x] 12-03: whats-new command - Create /gsd:whats-new with remote fetch and version comparison
+- [x] 12-03: whats-new command - Create /conductor:whats-new with remote fetch and version comparison
 
 **Wave structure:**
 - Wave 1: 12-01 (foundation)
 - Wave 2: 12-02, 12-03 (parallel - both depend only on 12-01)
 
 **Details:**
-Users adopting GSD need visibility into what changed between versions. The publish workflow generates curated changelog entries (Claude-drafted, Lex-approved). `/gsd:whats-new` fetches from GitHub raw, compares to installed version, and prompts to update if behind.
+Users adopting Conductor need visibility into what changed between versions. The publish workflow generates curated changelog entries (Claude-drafted, Lex-approved). `/conductor:whats-new` fetches from GitHub raw, compares to installed version, and prompts to update if behind.
 
 ### Phase 99: Test Parallel (THROWAWAY)
 

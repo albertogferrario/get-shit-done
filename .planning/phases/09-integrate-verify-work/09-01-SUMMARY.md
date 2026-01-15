@@ -7,9 +7,9 @@ tags: [verify-work, uat, testing, workflow, template]
 # Dependency graph
 requires:
   - phase: 08-improve-roadmap
-    provides: GSD command/workflow patterns
+    provides: Conductor command/workflow patterns
 provides:
-  - verify-work workflow with GSD structure
+  - verify-work workflow with Conductor structure
   - UAT issues template for phase-scoped issues
   - Refactored verify-work command with workflow delegation
 affects: [plan-fix, progress]
@@ -21,8 +21,8 @@ tech-stack:
 
 key-files:
   created:
-    - get-shit-done/workflows/verify-work.md
-    - get-shit-done/templates/uat-issues.md
+    - conductor/workflows/verify-work.md
+    - conductor/templates/uat-issues.md
   modified:
     - commands/gsd/verify-work.md
 
@@ -42,7 +42,7 @@ duration: 3min
 completed: 2026-01-08
 ---
 
-# Phase 9 Plan 1: GSD-Compliant Verify-Work Foundation Summary
+# Phase 9 Plan 1: Conductor-Compliant Verify-Work Foundation Summary
 
 **Workflow, template, and refactored command for UAT testing with phase-scoped issue logging**
 
@@ -56,7 +56,7 @@ completed: 2026-01-08
 
 ## Accomplishments
 
-- Created verify-work workflow with GSD-compliant XML structure (terse step names, AskUserQuestion pattern)
+- Created verify-work workflow with Conductor-compliant XML structure (terse step names, AskUserQuestion pattern)
 - Created UAT issues template for phase-scoped issue tracking
 - Refactored verify-work command to delegate to workflow (no inline logic)
 
@@ -70,8 +70,8 @@ completed: 2026-01-08
 
 ## Files Created/Modified
 
-- `get-shit-done/workflows/verify-work.md` - UAT workflow with 8 terse steps
-- `get-shit-done/templates/uat-issues.md` - Phase-scoped issue format with severity guide
+- `conductor/workflows/verify-work.md` - UAT workflow with 8 terse steps
+- `conductor/templates/uat-issues.md` - Phase-scoped issue format with severity guide
 - `commands/gsd/verify-work.md` - Refactored to delegate to workflow
 
 ## Decisions Made
@@ -91,7 +91,7 @@ None
 ## Next Phase Readiness
 
 - verify-work workflow ready for use
-- Next: Create `/gsd:plan-fix` command to complete verify → fix loop
+- Next: Create `/conductor:plan-fix` command to complete verify → fix loop
 - README.md update needed to document new commands
 
 ---

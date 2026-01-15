@@ -1,17 +1,17 @@
 ---
 paths:
-  - "commands/gsd/**/*.md"
+  - "commands/conductor/**/*.md"
 ---
 
 # Slash Command Rules
 
-Rules for editing files in `commands/gsd/`.
+Rules for editing files in `commands/conductor/`.
 
 ## File Structure
 
 ```yaml
 ---
-name: gsd:command-name
+name: conductor:command-name
 description: One-line description
 argument-hint: "<required>" or "[optional]"
 allowed-tools: [Read, Write, Bash, Glob, Grep, AskUserQuestion]
@@ -36,9 +36,9 @@ Commands answer "what to do", workflows answer "how to do it".
 
 ```markdown
 <execution_context>
-@~/.claude/get-shit-done/workflows/execute-phase.md
-@~/.claude/get-shit-done/templates/summary.md
-@~/.claude/get-shit-done/references/plan-format.md
+@~/.claude/conductor/workflows/execute-phase.md
+@~/.claude/conductor/templates/summary.md
+@~/.claude/conductor/references/plan-format.md
 </execution_context>
 
 <context>

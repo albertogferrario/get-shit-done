@@ -1,11 +1,11 @@
 ---
 paths:
-  - "get-shit-done/references/**/*.md"
+  - "conductor/references/**/*.md"
 ---
 
 # Reference File Rules
 
-Rules for editing files in `get-shit-done/references/`.
+Rules for editing files in `conductor/references/`.
 
 ## Outer Container Pattern
 

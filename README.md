@@ -1,27 +1,27 @@
 <div align="center">
 
-# GET SHIT DONE
+# CONDUCTOR
 
 **A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.**
 
 **Solves context rot — the quality degradation that happens as Claude fills its context window.**
 
-[![npm version](https://img.shields.io/npm/v/get-shit-done-cc?style=for-the-badge&logo=npm&logoColor=white&color=CB3837)](https://www.npmjs.com/package/get-shit-done-cc)
-[![npm downloads](https://img.shields.io/npm/dm/get-shit-done-cc?style=for-the-badge&logo=npm&logoColor=white&color=CB3837)](https://www.npmjs.com/package/get-shit-done-cc)
+[![npm version](https://img.shields.io/npm/v/conductor-cc?style=for-the-badge&logo=npm&logoColor=white&color=CB3837)](https://www.npmjs.com/package/conductor-cc)
+[![npm downloads](https://img.shields.io/npm/dm/conductor-cc?style=for-the-badge&logo=npm&logoColor=white&color=CB3837)](https://www.npmjs.com/package/conductor-cc)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/glittercowboy/get-shit-done?style=for-the-badge&logo=github&color=181717)](https://github.com/glittercowboy/get-shit-done)
+[![GitHub stars](https://img.shields.io/github/stars/glittercowboy/conductor?style=for-the-badge&logo=github&color=181717)](https://github.com/glittercowboy/conductor)
 
 <br>
 
 ```bash
-npx get-shit-done-cc
+npx conductor-cc
 ```
 
 **Works on Mac, Windows, and Linux.**
 
 <br>
 
-![GSD Install](assets/terminal.svg)
+![Conductor Install](assets/terminal.svg)
 
 <br>
 
@@ -47,7 +47,7 @@ I'm a solo developer. I don't write code — Claude Code does.
 
 Other spec-driven development tools exist; BMAD, Speckit... But they all seem to make things way more complicated than they need to be (sprint ceremonies, story points, stakeholder syncs, retrospectives, Jira workflows) or lack real big picture understanding of what you're building. I'm not a 50-person software company. I don't want to play enterprise theater. I'm just a creative person trying to build great things that work.
 
-So I built GSD. The complexity is in the system, not in your workflow. Behind the scenes: context engineering, XML prompt formatting, subagent orchestration, state management. What you see: a few commands that just work.
+So I built Conductor. The complexity is in the system, not in your workflow. Behind the scenes: context engineering, XML prompt formatting, subagent orchestration, state management. What you see: a few commands that just work.
 
 The system gives Claude everything it needs to do the work *and* verify it. I trust the workflow. It just does a good job.
 
@@ -59,7 +59,7 @@ That's what this is. No enterprise roleplay bullshit. Just an incredibly effecti
 
 Vibecoding has a bad reputation. You describe what you want, AI generates code, and you get inconsistent garbage that falls apart at scale.
 
-GSD fixes that. It's the context engineering layer that makes Claude Code reliable. Describe your idea, let the system extract everything it needs to know, and let Claude Code get to work.
+Conductor fixes that. It's the context engineering layer that makes Claude Code reliable. Describe your idea, let the system extract everything it needs to know, and let Claude Code get to work.
 
 ---
 
@@ -72,17 +72,17 @@ People who want to describe what they want and have it built correctly — witho
 ## Getting Started
 
 ```bash
-npx get-shit-done-cc
+npx conductor-cc
 ```
 
-That's it. Verify with `/gsd:help` inside your Claude Code interface.
+That's it. Verify with `/conductor:help` inside your Claude Code interface.
 
 <details>
 <summary><strong>Non-interactive Install (Docker, CI, Scripts)</strong></summary>
 
 ```bash
-npx get-shit-done-cc --global   # Install to ~/.claude/
-npx get-shit-done-cc --local    # Install to ./.claude/
+npx conductor-cc --global   # Install to ~/.claude/
+npx conductor-cc --local    # Install to ./.claude/
 ```
 
 Use `--global` (`-g`) or `--local` (`-l`) to skip the interactive prompt.
@@ -95,8 +95,8 @@ Use `--global` (`-g`) or `--local` (`-l`) to skip the interactive prompt.
 Clone the repository and run the installer locally:
 
 ```bash
-git clone https://github.com/glittercowboy/get-shit-done.git
-cd get-shit-done
+git clone https://github.com/glittercowboy/conductor.git
+cd conductor
 node bin/install.js --local
 ```
 
@@ -106,14 +106,14 @@ Installs to `./.claude/` for testing modifications before contributing.
 
 ### Recommended: Skip Permissions Mode
 
-GSD is designed for frictionless automation. Run Claude Code with:
+Conductor is designed for frictionless automation. Run Claude Code with:
 
 ```bash
 claude --dangerously-skip-permissions
 ```
 
 > [!TIP]
-> This is how GSD is intended to be used — stopping to approve `date` and `git commit` 50 times defeats the purpose.
+> This is how Conductor is intended to be used — stopping to approve `date` and `git commit` 50 times defeats the purpose.
 
 <details>
 <summary><strong>Alternative: Granular Permissions</strong></summary>
@@ -155,7 +155,7 @@ If you prefer not to use that flag, add this to your project's `.claude/settings
 ### 1. Start with an idea
 
 ```
-/gsd:new-project
+/conductor:new-project
 ```
 
 The system asks questions. Keeps asking until it has everything — your goals, constraints, tech preferences, edge cases. You go back and forth until the idea is fully captured. Creates **PROJECT.md**.
@@ -163,7 +163,7 @@ The system asks questions. Keeps asking until it has everything — your goals, 
 ### 2. Create roadmap
 
 ```
-/gsd:create-roadmap
+/conductor:create-roadmap
 ```
 
 Produces:
@@ -173,25 +173,25 @@ Produces:
 ### 3. Plan and execute phases
 
 ```
-/gsd:plan-phase 1      # System creates atomic task plans
-/gsd:execute-phase 1   # Parallel agents execute all plans
+/conductor:plan-phase 1      # System creates atomic task plans
+/conductor:execute-phase 1   # Parallel agents execute all plans
 ```
 
 Each phase breaks into 2-3 task plans. Each plan runs in a fresh subagent context — 200k tokens purely for implementation, zero degradation. Plans without dependencies run in parallel.
 
 **For single-plan or interactive execution:**
 ```
-/gsd:execute-plan      # Run one plan at a time with checkpoints
+/conductor:execute-plan      # Run one plan at a time with checkpoints
 ```
 
-Use `/gsd:execute-phase` for parallel "walk away" automation (recommended). Use `/gsd:execute-plan` when you need interactive single-plan execution with manual checkpoints.
+Use `/conductor:execute-phase` for parallel "walk away" automation (recommended). Use `/conductor:execute-plan` when you need interactive single-plan execution with manual checkpoints.
 
 ### 4. Ship and iterate
 
 ```
-/gsd:complete-milestone   # Archive v1, prep for v2
-/gsd:add-phase            # Append new work
-/gsd:insert-phase 2       # Slip urgent work between phases
+/conductor:complete-milestone   # Archive v1, prep for v2
+/conductor:add-phase            # Append new work
+/conductor:insert-phase 2       # Slip urgent work between phases
 ```
 
 Ship your MVP in a day. Add features. Insert hotfixes. The system stays modular — you're never stuck.
@@ -205,7 +205,7 @@ Already have code? Start here instead.
 ### 1. Map the codebase
 
 ```
-/gsd:map-codebase
+/conductor:map-codebase
 ```
 
 Spawns parallel agents to analyze your code. Creates `.planning/codebase/` with 7 documents:
@@ -223,14 +223,14 @@ Spawns parallel agents to analyze your code. Creates `.planning/codebase/` with 
 ### 2. Initialize project
 
 ```
-/gsd:new-project
+/conductor:new-project
 ```
 
 Same as greenfield, but the system knows your codebase. Questions focus on what you're adding/changing, not starting from scratch.
 
 ### 3. Continue as normal
 
-From here, it's the same: `/gsd:create-roadmap` → `/gsd:plan-phase` → `/gsd:execute-phase`
+From here, it's the same: `/conductor:create-roadmap` → `/conductor:plan-phase` → `/conductor:execute-phase`
 
 The codebase docs load automatically during planning. Claude knows your patterns, conventions, and where to put things.
 
@@ -242,7 +242,7 @@ The codebase docs load automatically during planning. Claude knows your patterns
 
 Claude Code is incredibly powerful *if* you give it the context it needs. Most people don't.
 
-GSD handles it for you:
+Conductor handles it for you:
 
 | File | What it does |
 |------|--------------|
@@ -279,7 +279,7 @@ Precise instructions. No guessing. Verification built in.
 
 As Claude fills its context window, quality degrades. You've seen it: *"Due to context limits, I'll be more concise now."* That "concision" is code for cutting corners.
 
-GSD prevents this. Each plan is maximum 3 tasks. Each plan runs in a fresh subagent — 200k tokens purely for implementation, zero accumulated garbage.
+Conductor prevents this. Each plan is maximum 3 tasks. Each plan runs in a fresh subagent — 200k tokens purely for implementation, zero accumulated garbage.
 
 | Task | Context | Quality |
 |------|---------|---------|
@@ -320,31 +320,31 @@ You're never locked in. The system adapts.
 
 | Command | What it does |
 |---------|--------------|
-| `/gsd:new-project` | Extract your idea through questions, create PROJECT.md |
-| `/gsd:create-roadmap` | Create roadmap and state tracking |
-| `/gsd:map-codebase` | Map existing codebase for brownfield projects |
-| `/gsd:plan-phase [N]` | Generate task plans for phase |
-| `/gsd:execute-plan` | Run single plan via subagent |
-| `/gsd:execute-phase <N>` | Execute all plans in phase N with parallel agents |
-| `/gsd:status [--wait]` | Check background agent status from parallel execution |
-| `/gsd:progress` | Where am I? What's next? |
-| `/gsd:verify-work [N]` | User acceptance test of phase or plan ¹ |
-| `/gsd:plan-fix [plan]` | Plan fixes for UAT issues from verify-work |
-| `/gsd:complete-milestone` | Ship it, prep next version |
-| `/gsd:discuss-milestone` | Gather context for next milestone |
-| `/gsd:new-milestone [name]` | Create new milestone with phases |
-| `/gsd:add-phase` | Append phase to roadmap |
-| `/gsd:insert-phase [N]` | Insert urgent work |
-| `/gsd:remove-phase [N]` | Remove future phase, renumber subsequent |
-| `/gsd:discuss-phase [N]` | Gather context before planning |
-| `/gsd:research-phase [N]` | Deep ecosystem research for niche domains |
-| `/gsd:list-phase-assumptions [N]` | See what Claude thinks before you correct it |
-| `/gsd:pause-work` | Create handoff file when stopping mid-phase |
-| `/gsd:resume-work` | Restore from last session |
-| `/gsd:add-todo [desc]` | Capture idea or task from conversation for later |
-| `/gsd:check-todos [area]` | List pending todos, select one to work on |
-| `/gsd:debug [desc]` | Systematic debugging with persistent state across `/clear` |
-| `/gsd:help` | Show all commands and usage guide |
+| `/conductor:new-project` | Extract your idea through questions, create PROJECT.md |
+| `/conductor:create-roadmap` | Create roadmap and state tracking |
+| `/conductor:map-codebase` | Map existing codebase for brownfield projects |
+| `/conductor:plan-phase [N]` | Generate task plans for phase |
+| `/conductor:execute-plan` | Run single plan via subagent |
+| `/conductor:execute-phase <N>` | Execute all plans in phase N with parallel agents |
+| `/conductor:status [--wait]` | Check background agent status from parallel execution |
+| `/conductor:progress` | Where am I? What's next? |
+| `/conductor:verify-work [N]` | User acceptance test of phase or plan ¹ |
+| `/conductor:plan-fix [plan]` | Plan fixes for UAT issues from verify-work |
+| `/conductor:complete-milestone` | Ship it, prep next version |
+| `/conductor:discuss-milestone` | Gather context for next milestone |
+| `/conductor:new-milestone [name]` | Create new milestone with phases |
+| `/conductor:add-phase` | Append phase to roadmap |
+| `/conductor:insert-phase [N]` | Insert urgent work |
+| `/conductor:remove-phase [N]` | Remove future phase, renumber subsequent |
+| `/conductor:discuss-phase [N]` | Gather context before planning |
+| `/conductor:research-phase [N]` | Deep ecosystem research for niche domains |
+| `/conductor:list-phase-assumptions [N]` | See what Claude thinks before you correct it |
+| `/conductor:pause-work` | Create handoff file when stopping mid-phase |
+| `/conductor:resume-work` | Restore from last session |
+| `/conductor:add-todo [desc]` | Capture idea or task from conversation for later |
+| `/conductor:check-todos [area]` | List pending todos, select one to work on |
+| `/conductor:debug [desc]` | Systematic debugging with persistent state across `/clear` |
+| `/conductor:help` | Show all commands and usage guide |
 
 <sup>¹ Contributed by reddit user OracleGreyBeard</sup>
 
@@ -354,22 +354,22 @@ You're never locked in. The system adapts.
 
 **Commands not found after install?**
 - Restart Claude Code to reload slash commands
-- Verify files exist in `~/.claude/commands/gsd/` (global) or `./.claude/commands/gsd/` (local)
+- Verify files exist in `~/.claude/commands/conductor/` (global) or `./.claude/commands/conductor/` (local)
 
 **Commands not working as expected?**
-- Run `/gsd:help` to verify installation
-- Re-run `npx get-shit-done-cc` to reinstall
+- Run `/conductor:help` to verify installation
+- Re-run `npx conductor-cc` to reinstall
 
 **Updating to the latest version?**
 ```bash
-npx get-shit-done-cc@latest
+npx conductor-cc@latest
 ```
 
 **Using Docker or containerized environments?**
 
 If file reads fail with tilde paths (`~/.claude/...`), set `CLAUDE_CONFIG_DIR` before installing:
 ```bash
-CLAUDE_CONFIG_DIR=/home/youruser/.claude npx get-shit-done-cc --global
+CLAUDE_CONFIG_DIR=/home/youruser/.claude npx conductor-cc --global
 ```
 This ensures absolute paths are used instead of `~` which may not expand correctly in containers.
 
@@ -377,11 +377,11 @@ This ensures absolute paths are used instead of `~` which may not expand correct
 
 ## Star History
 
-<a href="https://star-history.com/#glittercowboy/get-shit-done&Date">
+<a href="https://star-history.com/#glittercowboy/conductor&Date">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=glittercowboy/get-shit-done&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=glittercowboy/get-shit-done&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=glittercowboy/get-shit-done&type=Date" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=glittercowboy/conductor&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=glittercowboy/conductor&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=glittercowboy/conductor&type=Date" />
  </picture>
 </a>
 
@@ -395,6 +395,6 @@ MIT License. See [LICENSE](LICENSE) for details.
 
 <div align="center">
 
-**Claude Code is powerful. GSD makes it reliable.**
+**Claude Code is powerful. Conductor makes it reliable.**
 
 </div>

@@ -1,11 +1,11 @@
 ---
 paths:
-  - "get-shit-done/templates/**/*.md"
+  - "conductor/templates/**/*.md"
 ---
 
 # Template Rules
 
-Rules for editing files in `get-shit-done/templates/`.
+Rules for editing files in `conductor/templates/`.
 
 ## Structure Varies
 

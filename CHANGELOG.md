@@ -19,7 +19,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [1.4.25] - 2026-01-14
 
 ### Added
-- New `/gsd:whats-new` command shows changes since your installed version
+- New `/conductor:whats-new` command shows changes since your installed version
 - VERSION file written during installation for version tracking
 - CHANGELOG.md now included in package installation
 
@@ -152,7 +152,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [1.4.3] - 2026-01-13
 
 ### Added
-- `/gsd:debug` command for systematic debugging with persistent state
+- `/conductor:debug` command for systematic debugging with persistent state
 
 ## [1.4.2] - 2026-01-13
 
@@ -162,9 +162,9 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [1.4.1] - 2026-01-13
 
 ### Added
-- Parallel phase execution via `/gsd:execute-phase`
-- Parallel-aware planning in `/gsd:plan-phase`
-- `/gsd:status` command for parallel agent monitoring
+- Parallel phase execution via `/conductor:execute-phase`
+- Parallel-aware planning in `/conductor:plan-phase`
+- `/conductor:status` command for parallel agent monitoring
 - Parallelization configuration in config.json
 - Wave-based parallel execution with dependency graphs
 
@@ -187,7 +187,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [1.3.34] - 2026-01-11
 
 ### Added
-- `/gsd:add-todo` and `/gsd:check-todos` for mid-session idea capture
+- `/conductor:add-todo` and `/conductor:check-todos` for mid-session idea capture
 
 ## [1.3.33] - 2026-01-11
 
@@ -200,7 +200,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [1.3.32] - 2026-01-10
 
 ### Added
-- `/gsd:resume-task` for resuming interrupted subagent executions
+- `/conductor:resume-task` for resuming interrupted subagent executions
 
 ## [1.3.31] - 2026-01-08
 
@@ -216,15 +216,15 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [1.3.29] - 2026-01-08
 
 ### Added
-- `/gsd:verify-work` for conversational UAT validation
-- `/gsd:plan-fix` for fixing UAT issues
+- `/conductor:verify-work` for conversational UAT validation
+- `/conductor:plan-fix` for fixing UAT issues
 - UAT issues template
 
 ## [1.3.28] - 2026-01-07
 
 ### Added
 - `--config-dir` CLI argument for multi-account setups
-- `/gsd:remove-phase` command
+- `/conductor:remove-phase` command
 
 ### Fixed
 - Validation for --config-dir edge cases
@@ -372,12 +372,12 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [1.3.1] - 2025-12-17
 
 ### Added
-- `/gsd:map-codebase` documentation in help and README
+- `/conductor:map-codebase` documentation in help and README
 
 ## [1.3.0] - 2025-12-17
 
 ### Added
-- `/gsd:map-codebase` command for brownfield project analysis
+- `/conductor:map-codebase` command for brownfield project analysis
 - Codebase map templates (stack, architecture, structure, conventions, testing, integrations, concerns)
 - Parallel Explore agent orchestration for codebase analysis
 - Brownfield integration into GSD workflows
@@ -473,9 +473,9 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 - Pre-roadmap research workflow
-- `/gsd:research-phase` for niche domain ecosystem discovery
-- `/gsd:research-project` command with workflow and templates
-- `/gsd:create-roadmap` command with research-aware workflow
+- `/conductor:research-phase` for niche domain ecosystem discovery
+- `/conductor:research-project` command with workflow and templates
+- `/conductor:create-roadmap` command with research-aware workflow
 - Research subagent prompt templates
 
 ### Changed
@@ -485,7 +485,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [1.0.11] - 2025-12-15
 
 ### Added
-- `/gsd:research-phase` for niche domain ecosystem discovery
+- `/conductor:research-phase` for niche domain ecosystem discovery
 
 ## [1.0.10] - 2025-12-15
 
@@ -544,103 +544,103 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [1.0.0] - 2025-12-14
 
 ### Added
-- Initial release of GSD (Get Shit Done) meta-prompting system
-- Core slash commands: `/gsd:new-project`, `/gsd:discuss-phase`, `/gsd:plan-phase`, `/gsd:execute-phase`
+- Initial release of GSD (Conductor) meta-prompting system
+- Core slash commands: `/conductor:new-project`, `/conductor:discuss-phase`, `/conductor:plan-phase`, `/conductor:execute-phase`
 - PROJECT.md and STATE.md templates
 - Phase-based development workflow
 - YOLO mode for autonomous execution
 - Interactive mode with checkpoints
 
-[Unreleased]: https://github.com/glittercowboy/get-shit-done/compare/v1.4.27...HEAD
-[1.4.27]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.27
-[1.4.26]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.26
-[1.4.25]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.25
-[1.4.24]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.24
-[1.4.23]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.23
-[1.4.22]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.22
-[1.4.21]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.21
-[1.4.20]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.20
-[1.4.19]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.19
-[1.4.18]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.18
-[1.4.17]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.17
-[1.4.16]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.16
-[1.4.15]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.15
-[1.4.14]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.14
-[1.4.13]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.13
-[1.4.12]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.12
-[1.4.11]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.11
-[1.4.10]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.10
-[1.4.9]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.9
-[1.4.8]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.8
-[1.4.7]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.7
-[1.4.6]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.6
-[1.4.5]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.5
-[1.4.4]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.4
-[1.4.3]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.3
-[1.4.2]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.2
-[1.4.1]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.1
-[1.4.0]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.4.0
-[1.3.34]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.34
-[1.3.33]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.33
-[1.3.32]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.32
-[1.3.31]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.31
-[1.3.30]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.30
-[1.3.29]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.29
-[1.3.28]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.28
-[1.3.27]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.27
-[1.3.26]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.26
-[1.3.25]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.25
-[1.3.24]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.24
-[1.3.23]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.23
-[1.3.22]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.22
-[1.3.21]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.21
-[1.3.20]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.20
-[1.3.19]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.19
-[1.3.18]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.18
-[1.3.17]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.17
-[1.3.16]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.16
-[1.3.15]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.15
-[1.3.14]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.14
-[1.3.13]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.13
-[1.3.12]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.12
-[1.3.11]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.11
-[1.3.10]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.10
-[1.3.9]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.9
-[1.3.8]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.8
-[1.3.7]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.7
-[1.3.6]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.6
-[1.3.5]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.5
-[1.3.4]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.4
-[1.3.3]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.3
-[1.3.2]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.2
-[1.3.1]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.1
-[1.3.0]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.3.0
-[1.2.13]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.2.13
-[1.2.12]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.2.12
-[1.2.11]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.2.11
-[1.2.10]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.2.10
-[1.2.9]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.2.9
-[1.2.8]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.2.8
-[1.2.7]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.2.7
-[1.2.6]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.2.6
-[1.2.5]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.2.5
-[1.2.4]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.2.4
-[1.2.3]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.2.3
-[1.2.2]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.2.2
-[1.2.1]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.2.1
-[1.2.0]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.2.0
-[1.1.2]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.1.2
-[1.1.1]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.1.1
-[1.1.0]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.1.0
-[1.0.11]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.0.11
-[1.0.10]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.0.10
-[1.0.9]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.0.9
-[1.0.8]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.0.8
-[1.0.7]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.0.7
-[1.0.6]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.0.6
-[1.0.5]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.0.5
-[1.0.4]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.0.4
-[1.0.3]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.0.3
-[1.0.2]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.0.2
-[1.0.1]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.0.1
-[1.0.0]: https://github.com/glittercowboy/get-shit-done/releases/tag/v1.0.0
+[Unreleased]: https://github.com/glittercowboy/conductor/compare/v1.4.27...HEAD
+[1.4.27]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.27
+[1.4.26]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.26
+[1.4.25]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.25
+[1.4.24]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.24
+[1.4.23]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.23
+[1.4.22]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.22
+[1.4.21]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.21
+[1.4.20]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.20
+[1.4.19]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.19
+[1.4.18]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.18
+[1.4.17]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.17
+[1.4.16]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.16
+[1.4.15]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.15
+[1.4.14]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.14
+[1.4.13]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.13
+[1.4.12]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.12
+[1.4.11]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.11
+[1.4.10]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.10
+[1.4.9]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.9
+[1.4.8]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.8
+[1.4.7]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.7
+[1.4.6]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.6
+[1.4.5]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.5
+[1.4.4]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.4
+[1.4.3]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.3
+[1.4.2]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.2
+[1.4.1]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.1
+[1.4.0]: https://github.com/glittercowboy/conductor/releases/tag/v1.4.0
+[1.3.34]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.34
+[1.3.33]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.33
+[1.3.32]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.32
+[1.3.31]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.31
+[1.3.30]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.30
+[1.3.29]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.29
+[1.3.28]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.28
+[1.3.27]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.27
+[1.3.26]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.26
+[1.3.25]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.25
+[1.3.24]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.24
+[1.3.23]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.23
+[1.3.22]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.22
+[1.3.21]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.21
+[1.3.20]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.20
+[1.3.19]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.19
+[1.3.18]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.18
+[1.3.17]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.17
+[1.3.16]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.16
+[1.3.15]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.15
+[1.3.14]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.14
+[1.3.13]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.13
+[1.3.12]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.12
+[1.3.11]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.11
+[1.3.10]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.10
+[1.3.9]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.9
+[1.3.8]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.8
+[1.3.7]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.7
+[1.3.6]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.6
+[1.3.5]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.5
+[1.3.4]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.4
+[1.3.3]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.3
+[1.3.2]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.2
+[1.3.1]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.1
+[1.3.0]: https://github.com/glittercowboy/conductor/releases/tag/v1.3.0
+[1.2.13]: https://github.com/glittercowboy/conductor/releases/tag/v1.2.13
+[1.2.12]: https://github.com/glittercowboy/conductor/releases/tag/v1.2.12
+[1.2.11]: https://github.com/glittercowboy/conductor/releases/tag/v1.2.11
+[1.2.10]: https://github.com/glittercowboy/conductor/releases/tag/v1.2.10
+[1.2.9]: https://github.com/glittercowboy/conductor/releases/tag/v1.2.9
+[1.2.8]: https://github.com/glittercowboy/conductor/releases/tag/v1.2.8
+[1.2.7]: https://github.com/glittercowboy/conductor/releases/tag/v1.2.7
+[1.2.6]: https://github.com/glittercowboy/conductor/releases/tag/v1.2.6
+[1.2.5]: https://github.com/glittercowboy/conductor/releases/tag/v1.2.5
+[1.2.4]: https://github.com/glittercowboy/conductor/releases/tag/v1.2.4
+[1.2.3]: https://github.com/glittercowboy/conductor/releases/tag/v1.2.3
+[1.2.2]: https://github.com/glittercowboy/conductor/releases/tag/v1.2.2
+[1.2.1]: https://github.com/glittercowboy/conductor/releases/tag/v1.2.1
+[1.2.0]: https://github.com/glittercowboy/conductor/releases/tag/v1.2.0
+[1.1.2]: https://github.com/glittercowboy/conductor/releases/tag/v1.1.2
+[1.1.1]: https://github.com/glittercowboy/conductor/releases/tag/v1.1.1
+[1.1.0]: https://github.com/glittercowboy/conductor/releases/tag/v1.1.0
+[1.0.11]: https://github.com/glittercowboy/conductor/releases/tag/v1.0.11
+[1.0.10]: https://github.com/glittercowboy/conductor/releases/tag/v1.0.10
+[1.0.9]: https://github.com/glittercowboy/conductor/releases/tag/v1.0.9
+[1.0.8]: https://github.com/glittercowboy/conductor/releases/tag/v1.0.8
+[1.0.7]: https://github.com/glittercowboy/conductor/releases/tag/v1.0.7
+[1.0.6]: https://github.com/glittercowboy/conductor/releases/tag/v1.0.6
+[1.0.5]: https://github.com/glittercowboy/conductor/releases/tag/v1.0.5
+[1.0.4]: https://github.com/glittercowboy/conductor/releases/tag/v1.0.4
+[1.0.3]: https://github.com/glittercowboy/conductor/releases/tag/v1.0.3
+[1.0.2]: https://github.com/glittercowboy/conductor/releases/tag/v1.0.2
+[1.0.1]: https://github.com/glittercowboy/conductor/releases/tag/v1.0.1
+[1.0.0]: https://github.com/glittercowboy/conductor/releases/tag/v1.0.0
